@@ -1,0 +1,49 @@
+[
+  {
+    "userId": 1,
+    "username": "john_doe",
+    "profileImage": "https://picsum.photos/id/1011/100/100",
+    "stories": [
+      { "id": 1, "image": "https://picsum.photos/id/1011/400/700" },
+      { "id": 2, "image": "https://picsum.photos/id/1012/400/700" },
+      { "id": 3, "image": "https://picsum.photos/id/1013/400/700" }
+    ]
+  },
+  {
+    "userId": 2,
+    "username": "jane_smith",
+    "profileImage": "https://picsum.photos/id/1020/100/100",
+    "stories": [
+      { "id": 4, "image": "https://picsum.photos/id/1015/400/700" },
+      { "id": 5, "image": "https://picsum.photos/id/1016/400/700" }
+    ]
+  },
+  {
+    "userId": 3,
+    "username": "mike_johnson",
+    "profileImage": "https://picsum.photos/id/1025/100/100",
+    "stories": [
+      { "id": 6, "image": "https://picsum.photos/id/1018/400/700" }
+    ]
+  },
+  {
+    "userId": 4,
+    "username": "sarah_wilson",
+    "profileImage": "https://picsum.photos/id/1030/100/100",
+    "stories": [
+      { "id": 7, "image": "https://picsum.photos/id/1019/400/700" },
+      { "id": 8, "image": "https://picsum.photos/id/1021/400/700" },
+      { "id": 9, "image": "https://picsum.photos/id/1022/400/700" },
+      { "id": 10, "image": "https://picsum.photos/id/1023/400/700" }
+    ]
+  },
+  {
+    "userId": 5,
+    "username": "alex_brown",
+    "profileImage": "https://picsum.photos/id/1035/100/100",
+    "stories": [
+      { "id": 11, "image": "https://picsum.photos/id/1024/400/700" },
+      { "id": 12, "image": "https://picsum.photos/id/1025/400/700" }
+    ]
+  }
+]
