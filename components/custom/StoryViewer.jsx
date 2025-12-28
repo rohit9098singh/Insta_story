@@ -56,16 +56,19 @@ export default function StoryViewer({ users, initialUserIndex, onClose, onUserVi
       // Go to next story of same user
       setCurrentStoryIndex(prev => prev + 1);
       setIsLoading(true);
-    } else if (currentUserIndex < users.length - 1) {
-      // Go to first story of next user
-      onUserViewed(currentUser.userId);
-      setCurrentUserIndex(prev => prev + 1);
-      setCurrentStoryIndex(0);
-      setIsLoading(true);
     } else {
-      // Close viewer when reaching the end
+      // Mark current user as viewed when all their stories are done
       onUserViewed(currentUser.userId);
-      onClose();
+      
+      if (currentUserIndex < users.length - 1) {
+        // Go to first story of next user
+        setCurrentUserIndex(prev => prev + 1);
+        setCurrentStoryIndex(0);
+        setIsLoading(true);
+      } else {
+        // Close viewer when reaching the end
+        onClose();
+      }
     }
   };
 
@@ -86,6 +89,15 @@ export default function StoryViewer({ users, initialUserIndex, onClose, onUserVi
       // Close viewer if at first story
       onClose();
     }
+  };
+
+  // Handle close and mark as viewed
+  const handleClose = () => {
+    // Mark current user as viewed when closing
+    if (currentStoryIndex === currentUser.stories.length - 1) {
+      onUserViewed(currentUser.userId);
+    }
+    onClose();
   };
 
   // Handle tap navigation
@@ -148,7 +160,7 @@ export default function StoryViewer({ users, initialUserIndex, onClose, onUserVi
           goToNext();
           break;
         case 'Escape':
-          onClose();
+          handleClose();
           break;
       }
     };
@@ -203,7 +215,7 @@ export default function StoryViewer({ users, initialUserIndex, onClose, onUserVi
           
           {/* Close button */}
           <button
-            onClick={onClose}
+            onClick={handleClose}
             className="text-white/70 hover:text-white text-2xl font-light leading-none"
             aria-label="Close story"
           >
